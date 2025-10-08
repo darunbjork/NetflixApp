@@ -298,3 +298,31 @@ body.dark-mode header {
     margin-top: 15px;
     font-weight: bold;
 }
+
+/* --- Movie Carousel --- */
+.carousel-container {
+    margin-top: 40px;
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    scrollbar-width: none; /* for Firefox */
+}
+
+.movie-carousel::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    width: 250px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+}
+
+.carousel-slide .movie-card {
+    width: 100%;
+}

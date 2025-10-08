@@ -26,6 +26,10 @@ const MovieSchema = new mongoose.Schema(
       type: Number,
       required: [true, 'Please add a release year'],
     },
+    releaseDate: {
+      type: Date,
+      default: Date.now,
+    },
     imageUrl: {
       type: String,
       default: '/images/default.jpg',

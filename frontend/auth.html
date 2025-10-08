@@ -14,37 +14,14 @@
         </div>
       </div>
 
-      <nav id="navbar">
-        <a href="index.html">Hem</a>
-        <a href="filmer.html">Filmer</a>
-        <a href="premiärer.html">Premiärer</a>
-        <a href="profile.html">Profile</a>
-        <div class="dropdown">
-          <button class="dropbtn">Mer <i class="fas fa-caret-down"></i></button>
-          <div class="dropdown-content">
-            <a href="om-oss.html">Om oss</a>
-            <a href="kontakt.html">Kontakt</a>
-          </div>
-        </div>
-        <button id="darkToggle">☀️ Switch to Dark</button>
-        <div class="dropdown auth-dropdown">
-          <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
-          <div class="dropdown-content" id="auth-dropdown-content">
-            
-          </div>
-        </div>
-      </nav>
+
     </header>
 
     <main>
       <section class="auth-container">
-        <h2>Login / Register</h2>
-        <div class="auth-form-toggle">
-          <button id="showLogin" class="active btn-primary">Login</button>
-          <button id="showRegister" class="btn-primary">Register</button>
-        </div>
+        <h2>Skapa Konto</h2>
 
-        <form id="loginForm" class="auth-form">
+        <form id="loginForm" class="auth-form" style="display: none;">
           <div class="form-group">
             <label for="loginEmail">Email</label>
             <input type="email" id="loginEmail" required />
@@ -57,7 +34,7 @@
           <p id="loginStatus" class="form-status"></p>
         </form>
 
-        <form id="registerForm" class="auth-form" style="display: none;">
+        <form id="registerForm" class="auth-form">
           <div class="form-group">
             <label for="registerUsername">Username</label>
             <input type="text" id="registerUsername" required />

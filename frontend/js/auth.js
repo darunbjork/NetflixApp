@@ -1,36 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const BASE_API_URL = 'http://localhost:3000';
-    const showLoginBtn = document.getElementById('showLogin');
-    const showRegisterBtn = document.getElementById('showRegister');
+    // Use relative path for API calls, as the backend serves the frontend
+    const BASE_API_URL = ''; // This will be relative to the current host
+
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const loginStatus = document.getElementById('loginStatus');
     const registerStatus = document.getElementById('registerStatus');
-
-    // Function to toggle between login and register forms
-    const toggleForms = (showLogin) => {
-        if (showLogin) {
-            loginForm.style.display = 'block';
-            registerForm.style.display = 'none';
-            showLoginBtn.classList.add('active');
-            showRegisterBtn.classList.remove('active');
-        } else {
-            loginForm.style.display = 'none';
-            registerForm.style.display = 'block';
-            showLoginBtn.classList.remove('active');
-            showRegisterBtn.classList.add('active');
-        }
-        loginStatus.textContent = ''; // Clear messages
-        registerStatus.textContent = '';
-    };
-
-    // Event listeners for form toggles
-    if (showLoginBtn) {
-        showLoginBtn.addEventListener('click', () => toggleForms(true));
-    }
-    if (showRegisterBtn) {
-        showRegisterBtn.addEventListener('click', () => toggleForms(false));
-    }
 
     // Handle Login Form Submission
     if (loginForm) {
@@ -93,10 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    registerStatus.textContent = 'Registration successful! Logging in and redirecting...';
-                    registerStatus.style.color = 'green';
-                    // After successful registration, automatically log in and redirect
-                    window.location.href = 'auth.html'; // Redirect to login page
+                    registerStatus.textContent = ''; // Clear register status
+                    loginStatus.textContent = 'Registration successful! Please log in.'; // Set login success message
+                    loginStatus.style.color = 'green';
+
+                    // Show login form, hide register form
+                    loginForm.style.display = 'block';
+                    registerForm.style.display = 'none';
+
                 } else {
                     registerStatus.textContent = data.message || data.error || 'Registration failed.';
                     registerStatus.style.color = 'red';

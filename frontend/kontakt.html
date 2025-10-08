@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmFokus</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
     <header>
-      <div class="header-left">
-        <div class="logo-container">
-          <img src="Film-Fokus.png" alt="Logotyp FilmFokus" />
-        </div>
-
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </label>
+      <div class="logo-container">
+        <img src="./img/Film-Fokus.png" alt="Logotyp FilmFokus" />
       </div>
+
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </label>
 
       <nav id="navbar">
         <a href="index.html">Hem</a>
@@ -38,7 +35,7 @@
         <div class="dropdown auth-dropdown">
           <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
           <div class="dropdown-content" id="auth-dropdown-content">
-            <a href="auth.html">Login/Register</a>
+            
           </div>
         </div>
       </nav>
@@ -63,24 +60,42 @@
       <form id="contactForm">
         <div class="form-group">
           <label for="name">Namn</label>
-          <input type="text" placeholder="Skriv ditt Namn..." id="name" name="name" required />
+          <input
+            type="text"
+            placeholder="Skriv ditt Namn..."
+            id="name"
+            name="name"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Skriv ditt email..." name="email" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Skriv ditt email..."
+            name="email"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="message">Meddelande</label>
-          <textarea id="message" placeholder="Skriv ditt meddelnade..." name="message" rows="5" required></textarea>
+          <textarea
+            id="message"
+            placeholder="Skriv ditt meddelnade..."
+            name="message"
+            rows="5"
+            required
+          ></textarea>
         </div>
         <button type="submit" class="form-submit-btn">Skicka</button>
       </form>
       <div id="form-status"></div>
     </main>
-    <script src="./js/app.js"></script>
     <footer>
       <p>© 2025 Film Fokus | Alla rättigheter reserverade</p>
       <a href="#">Integritetspolicy</a> | <a href="#">Cookies</a>
     </footer>
+    <script src="./js/app.js"></script>
   </body>
 </html>

@@ -49,10 +49,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (response.ok) {
         // User is logged in
         profileLink.style.display = 'block'; // Show Profile link
-        authDropdown.style.display = 'block'; // Show Account dropdown
+        authDropdown.style.display = 'inline-block'; // Show Account dropdown
 
         // Add Logout link to the dropdown
         const logoutLink = document.createElement('a');
+        logoutLink.classList.add('logout-dropdown-link');
         logoutLink.href = '#';
         logoutLink.textContent = 'Logout';
         logoutLink.addEventListener('click', async (e) => {
@@ -74,7 +75,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       } else {
         // User is not logged in
         profileLink.style.display = 'none'; // Hide Profile link
-        authDropdown.style.display = 'block'; // Show Account dropdown
 
         // Add Login/Register link to the dropdown
         authDropdownContent.innerHTML += '<a href="auth.html">Login/Register</a>';
@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Error checking authentication status:', error);
       // Assume not logged in on network error
       profileLink.style.display = 'none'; // Hide Profile link
-      authDropdown.style.display = 'block'; // Show Account dropdown
       authDropdownContent.innerHTML += '<a href="auth.html">Login/Register</a>';
     }
   };

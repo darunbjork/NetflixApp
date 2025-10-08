@@ -43,7 +43,6 @@ header h1 {
 
 nav a {
     color: #ffffff;
-    /* margin: 0 15px; */ /* Removed redundant margin */
     text-decoration: none;
     font-weight: 500;
     padding: 5px 0;
@@ -56,7 +55,6 @@ nav a:hover {
 
 nav #darkToggle {
     color: #ffffff;
-    /* margin: 0 15px; */ /* Removed redundant margin */
     text-decoration: none;
     font-weight: 500;
     padding: 5px 0;
@@ -689,7 +687,7 @@ body.dark-mode .form-group textarea {
 }
 
 .dropdown-content {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -698,23 +696,52 @@ body.dark-mode .form-group textarea {
 }
 
 .dropdown-content a {
-    color: black;
+    color: #111827; /* Darker text for visibility */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #ddd; /* Light gray background on hover */
+}
+
+.logout-dropdown-link {
+    color: #d00000 !important; /* Red text for logout */
+    text-align: left; /* Align with other dropdown items */
+    padding: 12px 16px; /* Match dropdown-content a padding */
+    display: block; /* Ensure it takes full width */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.logout-dropdown-link:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+    color: #a00000 !important; /* Darker red text on hover */
+}
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Show on hover */
 }
+
+
+
+.auth-dropdown .dropdown-content {
+    right: 0; /* Align auth dropdown to the right */
+    left: auto;
+}
+
 
 .header-left {
     display: flex;
     align-items: center;
     gap: 20px; /* Space between logo and menu icon */
+}
+
+.logo-container img {
+    height: 50px; /* Set a fixed height for the logo */
+    width: auto; /* Maintain aspect ratio */
 }
 
 .main-nav {
@@ -829,3 +856,24 @@ body.dark-mode .form-group textarea {
     }
 }
 
+
+
+footer {
+    background-color: rgb(45, 8, 8);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: white;
+}

@@ -326,3 +326,23 @@ body.dark-mode header {
 .carousel-slide .movie-card {
     width: 100%;
 }
+
+footer {
+    background-color: rgb(45, 8, 8);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: white;
+}

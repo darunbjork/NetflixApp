@@ -5,34 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmFokus</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
     <header>
-      <div class="logo-container">
-        <img src="Film-Fokus.png" alt="Logotyp FilmFokus" />
-      </div>
-
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </label>
-
-      <div id="navbar">
-        <a href="index.html">Hem</a>
-        <a href="#">Upptäck</a>
-        <a href="filmer.html">Filmer</a>
-        <button id="darkToggle">☀️ Switch to Dark</button>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">Mer</button>
-        <div class="dropdown-content">
-          <a href="om-oss.html">Om oss</a>
-          <a href="kontakt.html">Kontakt</a>
+      <div class="header-left">
+        <div class="logo-container">
+          <img src="Film-Fokus.png" alt="Logotyp FilmFokus" />
         </div>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </label>
       </div>
+
+      <nav id="navbar">
+        <a href="index.html">Hem</a>
+        <a href="filmer.html">Filmer</a>
+        <a href="premiärer.html">Premiärer</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+          <button class="dropbtn">Mer <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="om-oss.html">Om oss</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+        </div>
+        <button id="darkToggle">☀️ Switch to Dark</button>
+        <div class="dropdown auth-dropdown">
+          <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content" id="auth-dropdown-content">
+            <a href="auth.html">Login/Register</a>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
       <section class="home-content">
@@ -74,5 +83,9 @@
       <img src="Film-Fokus.png" alt="Logotyp FilmFokus" />
     </main>
     <script src="./js/app.js"></script>
+    <footer>
+      <p>© 2025 Film Fokus | Alla rättigheter reserverade</p>
+      <a href="#">Integritetspolicy</a> | <a href="#">Cookies</a>
+    </footer>
   </body>
 </html>

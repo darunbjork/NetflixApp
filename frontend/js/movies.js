@@ -1,5 +1,5 @@
 // frontend/js/movies.js
-import { getMovies } from './api.js';
+import { getMovies, addFavoriteMovie, removeFavoriteMovie } from './api.js';
 
 // --- DOM Elements ---
 const movieGrid = document.getElementById('movie-grid');
@@ -41,6 +41,7 @@ function renderMovie(movie) {
             <p class="description">${(movie.description || '').substring(0, 100)}...</p>
         </div>
         <button class="details-button" data-id="${movie._id}">Visa Detaljer</button>
+        <button class="favorite-button" data-id="${movie._id}">Lägg till i favoriter</button>
     `;
     
     movieGrid.appendChild(card);
@@ -143,12 +144,26 @@ document.addEventListener('DOMContentLoaded', fetchAndRenderMovies);
 
 // --- Event Listener for Details Button ---
 // Use event delegation on the grid to handle clicks on any details button.
-movieGrid.addEventListener('click', (e) => {
+movieGrid.addEventListener('click', async (e) => {
     // Check if the clicked element is a details button
     if (e.target.matches('.details-button')) {
         const movieId = e.target.dataset.id;
         // Redirect to the details page with the movie ID in the query string
-        window.location.href = `movie-details.html?id=${movieId}`;
+        window.location.href = `movie-detalis.html?id=${movieId}`;
+    }
+
+    // Check if the clicked element is a favorite button
+    if (e.target.matches('.favorite-button')) {
+        const movieId = e.target.dataset.id;
+        try {
+            // For now, just add to favorites. Later, we can check if it's already a favorite
+            await addFavoriteMovie(movieId);
+            alert('Movie added to favorites!');
+            // Optionally, update the button text/style
+        } catch (error) {
+            console.error('Error adding to favorites:', error);
+            alert('Could not add movie to favorites. Please log in.');
+        }
     }
 });
 

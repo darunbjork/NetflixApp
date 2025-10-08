@@ -153,3 +153,55 @@ export async function deleteMovie(id) {
     }
 }
 
+/**
+ * Adds a movie to the user's favorites.
+ * @param {string} movieId - The ID of the movie to add.
+ * @returns {Promise<Object>} - A promise that resolves to the updated user data.
+ */
+export async function addFavoriteMovie(movieId) {
+    try {
+        const response = await fetch(`/api/auth/favorites/${movieId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => null);
+            throw new Error(errorData?.error || `Could not add movie to favorites. Status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`API Error in addFavoriteMovie for ID ${movieId}:`, error);
+        throw error;
+    }
+}
+
+/**
+ * Removes a movie from the user's favorites.
+ * @param {string} movieId - The ID of the movie to remove.
+ * @returns {Promise<Object>} - A promise that resolves to the updated user data.
+ */
+export async function removeFavoriteMovie(movieId) {
+    try {
+        const response = await fetch(`/api/auth/favorites/${movieId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => null);
+            throw new Error(errorData?.error || `Could not remove movie from favorites. Status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`API Error in removeFavoriteMovie for ID ${movieId}:`, error);
+        throw error;
+    }
+}
+

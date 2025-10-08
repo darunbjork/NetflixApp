@@ -1,4 +1,4 @@
-import { getMovies } from './api.js';
+import { getMovies, addFavoriteMovie, removeFavoriteMovie } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const carouselContainer = document.getElementById('movie-carousel');
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <h3>${movie.title}</h3>
                     <p class="rating">⭐️ ${movie.rating} / 10</p>
                 </div>
-                <button class="details-button" data-id="${movie._id}">Visa Detaljer</button>
             `;
 
             slide.appendChild(card);
@@ -56,10 +55,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             carouselContainer.scrollLeft = scrollLeft - walk;
         });
 
-        carouselContainer.addEventListener('click', (e) => {
+        carouselContainer.addEventListener('click', async (e) => {
             if (e.target.matches('.details-button')) {
                 const movieId = e.target.dataset.id;
-                window.location.href = `movie-details.html?id=${movieId}`;
+                window.location.href = `movie-detalis.html?id=${movieId}`;
+            }
+
+            // Check if the clicked element is a favorite button
+            if (e.target.matches('.favorite-button')) {
+                const movieId = e.target.dataset.id;
+                try {
+                    await addFavoriteMovie(movieId);
+                    alert('Movie added to favorites!');
+                    // Optionally, update the button text/style
+                } catch (error) {
+                    console.error('Error adding to favorites:', error);
+                    alert('Could not add movie to favorites. Please log in.');
+                }
             }
         });
     }

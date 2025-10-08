@@ -18,6 +18,39 @@ header {
     border-radius: 30px;
     position: relative; /* for absolute positioning of navbar */
 }
+
+#darkToggle {
+    background: #005F73; /* Deep teal header */
+    color: #FFFFFF;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin: 0 15px;
+}
+
+
+nav #darkToggle {
+    color: #FFFFFF;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+    border: none;
+    background: none;
+}
+#darkToggle:hover {
+    color: #94D2BD; /* Lighter teal accent on hover */
+}
+
+body.dark-mode {
+    background-color: #111827; /* Dark charcoal */
+    color: #D1D5DB; /* Light gray text */
+}
+body.dark-mode header {
+    background: #1F2937; /* Slightly lighter charcoal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .logo-container {
     width: 100px;
     height: 100px;
@@ -58,6 +91,7 @@ header {
 #menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
 #navbar {
     display: none;
     position: absolute;
@@ -89,6 +123,7 @@ header {
         margin-top: 0;
     }
 }
+
 #navbar a,
 .dropbtn {
     transition: background-color 0.3s ease;
@@ -108,7 +143,6 @@ header {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -130,7 +164,6 @@ header {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 @media (min-width: 769px) {
     header {
         flex-direction: row;
@@ -148,4 +181,5 @@ header {
         width: auto;
         text-align: center;
         font-size: 16px;
-    } }
+    }
+}

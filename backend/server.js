@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
-dotenv.config({ path: './.env'});
+dotenv.config({ path: './.env', debug: true });
+console.log('MONGO_URI from .env:', process.env.MONGO_URI);
 
           const express = require('express');
           const morgan = require('morgan');

@@ -1,6 +1,6 @@
 // The base URL of your backend API.
 // By using a relative path, the browser will request from the same host and port.
-const API_BASE_URL = '/api/movies';
+const API_BASE_URL = 'https://netflix-backend-api-btqm.onrender.com/api/movies';
 
 /**
  * Fetches movies from the API.

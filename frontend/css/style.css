@@ -51,6 +51,14 @@ nav a {
 
 nav a:hover {
     color: #94d2bd; /* Lighter teal accent on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    border-radius: 5px;
+}
+
+nav a.active {
+    color: #94d2bd; /* Lighter teal accent */
+    font-weight: 700; /* Make it bolder */
+    border-bottom: 2px solid #94d2bd; /* Add an underline */
 }
 
 nav #darkToggle {
@@ -691,22 +699,39 @@ body.dark-mode .form-group textarea {
 .dropdown-content {
     display: none; /* Hidden by default */
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #005f73; /* Match header background for consistency */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 5px;
+    padding: 5px 0; /* Add some vertical padding */
 }
 
 .dropdown-content a {
-    color: #111827; /* Darker text for visibility */
-    padding: 12px 16px;
+    color: #ffffff; /* White text for dropdown items */
+    padding: 10px 16px; /* Adjust padding */
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd; /* Light gray background on hover */
+    background-color: #0077b6; /* Darker teal on hover */
+    color: #ffffff;
+}
+
+/* Dark mode adjustments for dropdowns */
+body.dark-mode .dropdown-content {
+    background-color: #1f2937; /* Darker background for dark mode dropdown */
+}
+
+body.dark-mode .dropdown-content a {
+    color: #d1d5db; /* Lighter text in dark mode */
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background-color: #374151; /* Darker hover in dark mode */
+    color: #ffffff;
 }
 
 .logout-dropdown-link {

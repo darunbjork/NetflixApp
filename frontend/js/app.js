@@ -89,4 +89,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Call the function to update navbar links on page load
   updateNavbarLinks();
+
+  // Function to highlight the active navigation link
+  const highlightActiveLink = () => {
+    const currentPath = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('#navbar a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active'); // Ensure only one link is active
+      }
+    });
+  };
+
+  // Call the function to highlight the active link on page load
+  highlightActiveLink();
 });

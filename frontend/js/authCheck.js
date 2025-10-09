@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const protectedRoutes = [
         'index.html',
-        'filmer.html',
         'movie-detalis.html',
         'profile.html'
     ];

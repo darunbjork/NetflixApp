@@ -7,24 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginStatus = document.getElementById('loginStatus');
     const registerStatus = document.getElementById('registerStatus');
 
-    // --- Handle URL parameters for post-registration redirect ---
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('registered') === 'true') {
-        // If redirected after successful registration, show login form
-        loginForm.style.display = 'block';
-        registerForm.style.display = 'none';
-        loginStatus.textContent = 'Registration successful! Please log in.';
-        loginStatus.style.color = 'green';
-        // Clear the query parameter from the URL
-        window.history.replaceState({}, document.title, window.location.pathname);
-    } else {
-        // Default state: show register form
-        loginForm.style.display = 'none';
-        registerForm.style.display = 'block';
-    }
-
-
-    // Handle Login Form Submission
+    // Default state: show register form
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -85,8 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    console.log('Registration successful! Redirecting to auth.html?registered=true...');
-                    window.location.href = 'auth.html?registered=true'; // Redirect with query param
+                    registerStatus.textContent = 'Registration successful! Please log in.';
+                    registerStatus.style.color = 'green';
+                    loginForm.style.display = 'block';
+                    registerForm.style.display = 'none';
+                    loginStatus.textContent = 'Registration successful! Please log in.';
+                    loginStatus.style.color = 'green';
                 } else {
                     registerStatus.textContent = data.message || data.error || 'Registration failed.';
                     registerStatus.style.color = 'red';

@@ -477,9 +477,11 @@ body.dark-mode .form-group textarea {
     .poster-info img {
         max-width: 100%;
     }
-    header nav a {
-        display: block;
-        margin: 5px 0;
+    }
+
+    /* Hide desktop navigation elements */
+    .nav-links, .nav-actions {
+        display: none;
     }
 }
 
@@ -771,90 +773,170 @@ body.dark-mode .form-group textarea {
 }
 
 /* Hide the checkbox input */
+
 #menu-toggle {
+
     display: none;
+
 }
+
+
 
 /* Adjust navbar for smaller screens */
+
 @media (max-width: 768px) {
+
     .menu-icon {
+
         display: block; /* Show the menu icon */
+
         cursor: pointer;
+
         padding: 10px;
+
         z-index: 100; /* Ensure it's above other content */
+
     }
+
+
 
     .menu-icon .bar {
+
         width: 25px;
+
         height: 3px;
+
         background-color: #fff;
+
         margin: 5px 0;
+
         transition: 0.4s;
+
     }
+
+
 
     #navbar {
-        flex-direction: column; /* Stack nav items vertically */
+
+        display: none; /* Hide by default on small screens */
+
         position: absolute;
+
         top: 0;
+
         right: -100%; /* Start off-screen */
+
         width: 70%; /* Adjust as needed */
+
         height: 100vh;
+
         background-color: #005f73; /* Same as header background */
+
         padding-top: 60px; /* Space for the logo/menu icon */
+
         transition: right 0.3s ease-in-out;
+
         box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+
         z-index: 99;
+
+        flex-direction: column; /* Stack nav items vertically */
+
         align-items: flex-start; /* Align items to the start */
+
     }
+
+
+
+    #menu-toggle:checked ~ #navbar {
+
+        right: 0; /* Slide in when checked */
+
+        display: flex; /* Show when checked */
+
+    }
+
+
 
     #navbar a, #navbar button, #navbar .dropdown {
+
         width: 100%; /* Full width for nav items */
+
         text-align: left;
+
         padding: 10px 20px;
+
         border-bottom: 1px solid rgba(255,255,255,0.1);
+
     }
+
+
 
     #navbar button {
+
         background: none; /* Remove button background */
+
         border: none;
+
         color: #fff;
+
         text-align: left;
+
         padding: 10px 20px;
+
     }
+
+
 
     #navbar .dropdown-content {
+
         position: static; /* Allow dropdown content to flow naturally */
+
         background-color: transparent;
+
         box-shadow: none;
+
         width: 100%;
+
     }
+
+
 
     #navbar .dropdown-content a {
+
         padding-left: 40px; /* Indent dropdown items */
+
         color: #fff;
+
     }
 
-    /* When menu-toggle is checked, show the navbar */
-    #menu-toggle:checked ~ #navbar {
-        right: 0;
-    }
+
 
     /* Rotate menu icon bars when active */
+
     #menu-toggle:checked ~ .menu-icon .bar:nth-child(1) {
+
         transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    #menu-toggle:checked ~ .menu-icon .bar:nth-child(2) {
-        opacity: 0;
-    }
-    #menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
+
     }
 
-    /* Hide desktop navigation elements */
-    .nav-links, .nav-actions {
-        display: none;
+    #menu-toggle:checked ~ .menu-icon .bar:nth-child(2) {
+
+        opacity: 0;
+
     }
+
+    #menu-toggle:checked ~ .menu-icon .bar:nth-child(3) {
+
+        transform: rotate(45deg) translate(-5px, -6px);
+
+    }
+
 }
+
+
+
+
 
 
 

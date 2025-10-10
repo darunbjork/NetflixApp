@@ -1,27 +1,25 @@
-/* frontend/css/style.css (Complete Styling) */
-
-/* --- Typography and Base Styles --- */
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background-color: #ffffff; /* White background */
-    color: #111827; /* Almost black text */
+    background: linear-gradient(100deg, #4E0909, #220404);
+    color: white; 
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background: #005f73; /* Deep teal header */
+    background: linear-gradient(100deg, #541515, #b13030);
     color: #ffffff;
     padding: 1.5rem 1rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(228, 218, 218, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -491,7 +489,7 @@ body.dark-mode .form-group textarea {
     .nav-links, .nav-actions {
         display: none;
     }
-}
+
 
 .form-submit-btn {
     background-color: #0077b6;

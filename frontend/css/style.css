@@ -80,10 +80,6 @@ body {
     font-weight: bold;
 }
 
-
-
-
-
 /* --- Filter Bar --- */
 .filter-bar {
     margin-bottom: 20px;
@@ -111,10 +107,6 @@ body {
     color: #ffffff;
     border-color: #0077b6;
 }
-
-
-
-
 
 /* --- Movie Grid --- */
 .movie-grid {
@@ -198,11 +190,6 @@ body {
     background-color: #1a0f10;
 }
 
-
-
-
-
-
 /* --- Detail Page Specific Styles --- */
 .details-container {
     display: flex;
@@ -255,13 +242,6 @@ body {
 .back-btn:hover {
     background-color: #005f73;
 }
-
-
-
-
-
-
-
 
 /* --- Movie Carousel --- */
 .carousel-container {

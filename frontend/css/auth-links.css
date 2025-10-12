@@ -28,3 +28,142 @@ body.dark-mode .auth-container p a {
 body.dark-mode .auth-container p a:hover {
   color: #3399ff; 
 }
+
+/* General Auth Container Styling */
+.auth-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+body.dark-mode .auth-container {
+    background-color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Heading */
+.auth-container h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+body.dark-mode .auth-container h2 {
+    color: #eee;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+body.dark-mode .form-group label {
+    color: #bbb;
+}
+
+/* Input Field Styling */
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+body.dark-mode .form-group input[type="email"],
+body.dark-mode .form-group input[type="password"],
+body.dark-mode .form-group input[type="text"] {
+    background-color: #444;
+    color: #eee;
+    border-color: #555;
+}
+
+body.dark-mode .form-group input[type="email"]:focus,
+body.dark-mode .form-group input[type="password"]:focus,
+body.dark-mode .form-group input[type="text"]:focus {
+    border-color: #3399ff;
+    box-shadow: 0 0 0 3px rgba(51, 153, 255, 0.25);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+body.dark-mode .btn-primary {
+    background-color: #3399ff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #007bff;
+}
+
+/* Status Message Styling */
+#loginStatus, #registerStatus {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .auth-container {
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    .auth-container h2 {
+        font-size: 24px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

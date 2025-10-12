@@ -31,6 +31,7 @@ console.log('MONGO_URI from .env:', process.env.MONGO_URI);
          
          app.use(cors({
            origin: (origin, cb) => {
+             console.log('Incoming request origin:', origin);
              // allow REST-tools / Postman (origin undefined)
              if (!origin || allowed.includes(origin)) return cb(null, true);
              cb(new Error('Not allowed by CORS'));

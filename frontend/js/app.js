@@ -106,4 +106,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Call the function to highlight the active link on page load
   highlightActiveLink();
+
+  // Mobile menu toggle functionality
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+
+  if (menuToggle && navbar) {
+    menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+        navbar.classList.add('active');
+      } else {
+        navbar.classList.remove('active');
+      }
+    });
+
+    // Close mobile menu when a navigation link is clicked
+    const navLinks = document.querySelectorAll('#navbar a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        menuToggle.checked = false; // Uncheck the checkbox
+      });
+    });
+  }
 });

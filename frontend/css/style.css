@@ -362,10 +362,7 @@ body {
     }
     }
 
-    /* Hide desktop navigation elements */
-    .nav-links, .nav-actions {
-        display: none;
-    }
+
 
 
 .form-submit-btn {

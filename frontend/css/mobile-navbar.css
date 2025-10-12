@@ -1,0 +1,104 @@
+/* Mobile Navbar Styles */
+
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Transform hamburger to X when menu-toggle is checked */
+#menu-toggle:checked + .menu-icon .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+#menu-toggle:checked + .menu-icon .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1000; /* Ensure it's above other content */
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .menu-icon .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #fff; /* White bars */
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    #navbar {
+        display: flex; /* Ensure it's a flex container even when hidden */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Off-screen by default */
+        width: 70%; /* Adjust as needed */
+        height: 100%;
+        background-color: #333; /* Dark background for the menu */
+        padding-top: 60px; /* Space for the header/icon */
+        box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        z-index: 999;
+        visibility: hidden; /* Hidden by default */
+    }
+
+    #navbar.active {
+        right: 0; /* Slide in */
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible; /* Show when active */
+    }
+
+    #navbar a {
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+        border-bottom: 1px solid #444;
+    }
+
+    #navbar a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Desktop styles - hide mobile menu elements and reset navbar */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none; /* Hide hamburger icon on desktop */
+    }
+
+    #navbar {
+        display: flex; /* Ensure navbar is visible on desktop */
+        opacity: 1; /* Ensure navbar is opaque on desktop */
+        transform: translateX(0); /* Ensure navbar is in position on desktop */
+        position: static; /* Reset position for desktop */
+        right: auto; /* Reset right for desktop */
+        width: auto; /* Reset width for desktop */
+        height: auto; /* Reset height for desktop */
+        background-color: transparent; /* Reset background for desktop */
+        box-shadow: none; /* Reset shadow for desktop */
+        flex-direction: row; /* Display as row for desktop */
+        padding-top: 0; /* Reset padding for desktop */
+        transition: none; /* Remove transitions for desktop */
+        visibility: visible; /* Ensure visible on desktop */
+    }
+
+    #navbar a {
+        border-bottom: none; /* Remove border for desktop */
+    }
+}

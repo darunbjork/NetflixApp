@@ -26,15 +26,14 @@ console.log('MONGO_URI from .env:', process.env.MONGO_URI);
                           'http://127.0.0.1:5500',
                           'http://localhost:5500',
                           process.env.FRONTEND_URL];
-         console.log('Allowed CORS origins:', allowed);
-         console.log('FRONTEND_URL from environment:', process.env.FRONTEND_URL);
          
          app.use(cors({
-           origin: (origin, cb) => {
-             console.log('Incoming request origin:', origin);
-             // allow REST-tools / Postman (origin undefined)
-             if (!origin || allowed.includes(origin)) return cb(null, true);
-             cb(new Error('Not allowed by CORS'));
+           origin: (origin, callback) => {
+             if (allowed.indexOf(origin) !== -1 || !origin) {
+               callback(null, true);
+             } else {
+               callback(new Error('Not allowed by CORS'));
+             }
            },
            credentials: true,   // cookies
          }));         

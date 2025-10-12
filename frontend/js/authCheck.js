@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include', // Ensure cookies are sent with the request
             });
 
             if (!response.ok) {

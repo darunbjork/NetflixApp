@@ -4,7 +4,7 @@ body.dark-mode {
 }
 
 body.dark-mode h2 {
-    color: #eef1f0; /* Light teal */
+    color: #eef1f0; 
     border-bottom-color: #374151;
 }
 
@@ -71,10 +71,10 @@ body.dark-mode .form-group textarea {
 }
 
 body.dark-mode .favorite-button {
-    background-color: #FD105E; /* New color for favorite button in dark mode */
+    background-color: #FD105E; 
     color: #ffffff;
 }
 
 body.dark-mode .favorite-button:hover {
-    background-color: #d0004a; /* Darker shade for hover in dark mode */
+    background-color: #d0004a; 
 }

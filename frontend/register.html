@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FilmFokus - Register</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/dark-lightmode.css">
+    <link rel="stylesheet" href="./css/auth-links.css">
+  </head>
+  <body>
+
+    <header>
+     
+        <a href="index.html" class="logo-link">
+          <img src="./img/Film-Fokus.png" alt="Logotyp FilmFokus" />
+        </a>
+
+      
+        <label for="menu-toggle" class="menu-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+   
+
+      <nav id="navbar">
+        <a href="index.html">Hem</a>
+        <a href="filmer.html">Filmer</a>
+        <a href="premiärer.html">Premiärer</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+          <button class="dropbtn">Mer <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="om-oss.html">Om oss</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+        </div>
+        <button id="darkToggle">☀️ Switch to Dark</button>
+        <div class="dropdown auth-dropdown">
+          <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content" id="auth-dropdown-content">
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="auth-container">
+        <h2>Register</h2>
+
+        <form id="registerForm" class="auth-form">
+          <div class="form-group">
+            <label for="registerUsername">Username</label>
+            <input type="text" id="registerUsername" required />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" required />
+          </div>
+          <button type="submit" class="form-submit-btn">Register</button>
+          <p id="registerStatus" class="form-status"></p>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+    <footer>
+      <p>© 2025 Film Fokus | Alla rättigheter reserverade</p>
+      <a href="#">Integritetspolicy</a> | <a href="#">Cookies</a>
+    </footer>
+  </body>
+</html>

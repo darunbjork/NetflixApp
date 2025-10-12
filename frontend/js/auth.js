@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginStatus = document.getElementById('loginStatus');
     const registerStatus = document.getElementById('registerStatus');
 
-    // Default state: show register form
-    loginForm.style.display = 'none';
-    registerForm.style.display = 'block';
+
 
       // Handle Register Form Submission
     if (registerForm) {
@@ -34,12 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    registerStatus.textContent = 'Registration successful! Please log in.';
+                    registerStatus.textContent = 'Registration successful! You can now log in on the login page.';
                     registerStatus.style.color = 'green';
-                    loginForm.style.display = 'block';
-                    registerForm.style.display = 'none';
-                    loginStatus.textContent = 'Registration successful! Please log in.';
-                    loginStatus.style.color = 'green';
                 } else {
                     registerStatus.textContent = data.message || data.error || 'Registration failed.';
                     registerStatus.style.color = 'red';

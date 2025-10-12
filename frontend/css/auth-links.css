@@ -1,0 +1,30 @@
+.auth-container p {
+  margin-top: 15px;
+  text-align: center;
+  color: #000000 !important; 
+  background-color: #FFFFFF !important; 
+}
+
+.auth-container p a {
+  color: #007bff; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+  color: #0056b3; 
+}
+
+/* Dark mode adjustments */
+body.dark-mode .auth-container p {
+  color: #e0e0e0; 
+}
+
+body.dark-mode .auth-container p a {
+  color: #0d3e3d; 
+}
+
+body.dark-mode .auth-container p a:hover {
+  color: #3399ff; 
+}

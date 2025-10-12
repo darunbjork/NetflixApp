@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             card.innerHTML = `
                 <img src="${movie.imageUrl || './assets/images/placeholder.jpg'}" alt="${movie.title} poster">
                 <div class="card-info">
-                    <h3>${movie.title}</h3>
+                    <h3>${movie.title} (${movie.year})</h3>
+                    <p class="genre-list">${Array.isArray(movie.genre) ? movie.genre.join(', ') : movie.genre}</p>
                     <p class="rating">⭐️ ${movie.rating} / 10</p>
                 </div>
             `;

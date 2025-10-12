@@ -8,84 +8,114 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background: linear-gradient(100deg, #4E0909, #220404);
+    background: linear-gradient(100deg, #fd0202, #ee6060);
     color: white; 
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background: linear-gradient(100deg, #541515, #b13030);
+    background: linear-gradient(100deg, #f37070, #f70101);
     color: #ffffff;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(228, 218, 218, 0.1);
+    box-shadow: 0 2px 5px rgba(252, 251, 251, 0.864);
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    border-radius: 20px;
+    position: relative;
 }
 
-#darkToggle {
-    background: #005f73; /* Deep teal header */
-    color: #ffffff;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    margin: 0 15px;
+.logo-link {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+.logo-link img {
+    height: 100px; 
+    width: auto; 
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
 }
 
 nav a {
-    color: #ffffff;
+    color: #e6dede;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     padding: 5px 0;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #94d2bd; /* Lighter teal accent on hover */
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    color: #eff0ef; /* Lighter teal accent on hover */
+    background-color: rgba(74, 11, 11, 0.196); /* Subtle background on hover */
     border-radius: 5px;
 }
 
 nav a.active {
-    color: #94d2bd; /* Lighter teal accent */
-    font-weight: 700; /* Make it bolder */
-    border-bottom: 2px solid #94d2bd; /* Add an underline */
+    color: #170707; /* Lighter teal accent */
+    border-bottom: 2px solid #0c1411; /* Add an underline */
 }
 
-nav #darkToggle {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 0;
-    transition: color 0.3s;
-    border: none;
-    background: none;
+
+#main-title {
+    margin-top: 10%;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+     background: linear-gradient(to left, white 0%, rgba(255, 255, 255, 0.648) 50%, rgba(242, 240, 240, 0.249) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-#darkToggle:hover {
-    color: #94d2bd; /* Lighter teal accent on hover */
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px;
+.home-content {
+    text-align: center;
+    color: white;
+    line-height: 1.6;
+    max-width: 90%;
     margin: 0 auto;
-    min-height: 80vh; /* Ensure footer stays low */
+    padding: 20px 10px;
+}
+.home-content p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.home-content ul {
+    list-style-type: disc; /*what is this*/
+    padding-left: 0;
+    display: inline-block;
+    text-align: left;
+    margin: 20px auto;
+}
+.home-content ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
-h2 {
-    color: #005f73;
-    border-bottom: 2px solid #dee2e6;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
+
+main img {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 40px auto;
+    border-radius: 250px;
+    object-fit: cover;
+    box-shadow: 0 0 80px 40px #4E0909 inset, 0 0 60px 20px #000;
+    filter: brightness(0.9);
 }
+
 
 /* --- Utility & State Messages --- */
 .loading-state, .error-state, .empty-state {
@@ -97,7 +127,7 @@ h2 {
 }
 
 .loading-state {
-    color: #0077b6;
+    color: #995555;
     background-color: #e0f7fa;
 }
 
@@ -107,6 +137,10 @@ h2 {
     border: 1px solid #ffc0c0;
     font-weight: bold;
 }
+
+
+
+
 
 /* --- Filter Bar --- */
 .filter-bar {
@@ -135,6 +169,10 @@ h2 {
     color: #ffffff;
     border-color: #0077b6;
 }
+
+
+
+
 
 /* --- Movie Grid --- */
 .movie-grid {
@@ -223,14 +261,10 @@ h2 {
     background-color: #005f73;
 }
 
-/* --- Footer --- */
-footer {
-    background: #111827;
-    color: #ffffff;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 40px;
-}
+
+
+
+
 
 /* --- Detail Page Specific Styles --- */
 .details-container {
@@ -289,6 +323,13 @@ footer {
 .back-btn:hover {
     background-color: #005f73;
 }
+
+
+
+
+
+
+
 
 /* --- Movie Carousel --- */
 .carousel-container {
@@ -396,83 +437,7 @@ footer {
     font-weight: bold;
 }
 
-/* --- Dark Mode --- */
-body.dark-mode {
-    background-color: #111827; /* Dark charcoal */
-    color: #d1d5db; /* Light gray text */
-}
 
-body.dark-mode header {
-    background: #1f2937; /* Slightly lighter charcoal */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode h2 {
-    color: #94d2bd; /* Light teal */
-    border-bottom-color: #374151;
-}
-
-body.dark-mode .movie-card {
-    background: #1f2937;
-    border-color: #374151;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode .card-info h3 {
-    color: #e5e7eb;
-}
-
-body.dark-mode .description {
-    color: #9ca3af;
-}
-
-body.dark-mode .genre-pill {
-    background-color: #374151;
-    color: #e5e7eb;
-}
-
-body.dark-mode .filter-btn {
-    background-color: #374151;
-    color: #d1d5db;
-    border-color: #4b5563;
-}
-
-body.dark-mode .filter-btn:hover {
-    background-color: #4b5563;
-}
-
-body.dark-mode .filter-btn.active {
-    background-color: #2563eb;
-    color: #ffffff;
-    border-color: #2563eb;
-}
-
-body.dark-mode .details-button,
-body.dark-mode .back-btn {
-    background-color: #2563eb;
-    color: #ffffff;
-}
-
-body.dark-mode .details-button:hover,
-body.dark-mode .back-btn:hover {
-    background-color: #1d4ed8;
-}
-
-body.dark-mode #movies-table th,
-body.dark-mode #movies-table td {
-    border-color: #374151;
-}
-
-body.dark-mode #movies-table th {
-    background-color: #1f2937;
-}
-
-body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
-    background-color: #374151;
-    border-color: #4b5563;
-    color: #d1d5db;
-}
 
 /* Mobile adjustments */
  @media (max-width: 768px) {
@@ -683,11 +648,7 @@ body.dark-mode .form-group textarea {
     color: #111827 !important; /* Ensure text is visible in light mode */
 }
 
-#navbar {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Space between nav items */
-}
+
 
 .dropdown {
     position: relative;
@@ -718,19 +679,7 @@ body.dark-mode .form-group textarea {
     color: #ffffff;
 }
 
-/* Dark mode adjustments for dropdowns */
-body.dark-mode .dropdown-content {
-    background-color: #1f2937; /* Darker background for dark mode dropdown */
-}
 
-body.dark-mode .dropdown-content a {
-    color: #d1d5db; /* Lighter text in dark mode */
-}
-
-body.dark-mode .dropdown-content a:hover {
-    background-color: #374151; /* Darker hover in dark mode */
-    color: #ffffff;
-}
 
 .logout-dropdown-link {
     color: #d00000 !important; /* Red text for logout */
@@ -764,10 +713,7 @@ body.dark-mode .dropdown-content a:hover {
     gap: 20px; /* Space between logo and menu icon */
 }
 
-.logo-container img {
-    height: 50px; /* Set a fixed height for the logo */
-    width: auto; /* Maintain aspect ratio */
-}
+
 
 .main-nav {
     display: flex;
@@ -957,12 +903,7 @@ body.dark-mode .dropdown-content a:hover {
 
 }
 
-
-
-
-
-
-
+/* --- Footer --- */
 footer {
     background-color: rgb(45, 8, 8);
     text-align: center;

@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmFokus</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/dark-lightmode.css" />
   </head>
   <body>
     <header>
       <div class="header-left">
-        <div class="logo-container">
-           <img src="./img/Film-Fokus.png" alt="Logotyp FilmFokus" />
-        </div>
-        <input type="checkbox" id="menu-toggle">
+        <a href="index.html" class="logo-link">
+          <img src="./img/Film-Fokus.png" alt="Logotyp FilmFokus" />
+        </a>
+        <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="menu-icon">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -34,10 +35,10 @@
         </div>
         <button id="darkToggle">☀️ Switch to Dark</button>
         <div class="dropdown auth-dropdown">
-          <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
-          <div class="dropdown-content" id="auth-dropdown-content">
-            
-          </div>
+          <button class="dropbtn">
+            Account <i class="fas fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="auth-dropdown-content"></div>
         </div>
       </nav>
     </header>
@@ -78,7 +79,15 @@
           berättelsernas universum.
         </p>
       </section>
+      <img
+        src="https://s.yimg.com/ny/api/res/1.2/QH5QyuwXkNjiiPnPj9EFbw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD04Mjc7Y2Y9d2VicA--/https://media.zenfs.com/en/mmail.com.my/702364fcf75c22a211bce7079ff285ac"
+        alt="Bild på en biosalong som är mörk och och har mysig belysning med vinröda färgtoner"
+      />
     </main>
+    <footer>
+      <p>© 2025 Film Fokus | Alla rättigheter reserverade</p>
+      <a href="#">Integritetspolicy</a> | <a href="#">Cookies</a>
+    </footer>
     <script src="./js/app.js"></script>
   </body>
 </html>

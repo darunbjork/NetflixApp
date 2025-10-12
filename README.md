@@ -146,4 +146,4 @@ This project is licensed under the ISC License.
 
 ## Contact
 
-For any inquiries or feedback, please contact [darunbjork](mailto:your.email@example.com).
+For any inquiries or feedback, please contact [darunbjork](mailto:your.email@example.com) or Nana Ohanyan(Nana.ohanyan@chasacademy.se) .

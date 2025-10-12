@@ -21,14 +21,16 @@ console.log('MONGO_URI from .env:', process.env.MONGO_URI);
          
 
          
-         const allowed = ['http://localhost:3000',
+         const allowed = [ process.env.FRONTEND_URL,
+          'http://localhost:3000',
                           'http://localhost:5000',
                           'http://127.0.0.1:5500',
                           'http://localhost:5500',
-                          process.env.FRONTEND_URL];
+                          ];
          
          app.use(cors({
            origin: (origin, callback) => {
+             console.log('Incoming request origin:', origin); // Re-added for debugging
              if (allowed.indexOf(origin) !== -1 || !origin) {
                callback(null, true);
              } else {

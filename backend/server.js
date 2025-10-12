@@ -24,7 +24,8 @@ console.log('MONGO_URI from .env:', process.env.MONGO_URI);
          const allowed = ['http://localhost:3000',
                           'http://localhost:5000',
                           'http://127.0.0.1:5500',
-                          'http://localhost:5500'];
+                          'http://localhost:5500',
+                          process.env.FRONTEND_URL];
          
          app.use(cors({
            origin: (origin, cb) => {

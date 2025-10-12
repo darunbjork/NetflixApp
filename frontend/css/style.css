@@ -56,17 +56,7 @@ body {
 }
 
 
-main img {
-    display: block;
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    margin: 40px auto;
-    border-radius: 250px;
-    object-fit: cover;
-    box-shadow: 0 0 80px 40px #4E0909 inset, 0 0 60px 20px #000;
-    filter: brightness(0.9);
-}
+
 
 
 /* --- Utility & State Messages --- */
@@ -151,12 +141,7 @@ main img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.movie-card img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-bottom: 1px solid #e9ecef;
-}
+
 
 .card-info {
     padding: 15px;
@@ -236,12 +221,7 @@ main img {
     flex-wrap: wrap;
 }
 
-.poster-info img {
-    max-width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
+
 
 .movie-specs {
     flex-grow: 1;

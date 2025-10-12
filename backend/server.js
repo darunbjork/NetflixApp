@@ -42,15 +42,12 @@ console.log('MONGO_URI from .env:', process.env.MONGO_URI);
          app.use('/api/auth', require('./routes/auth')); // Mount auth routes
          app.use('/api/movies', require('./routes/movies')); // Mount movies routes
          
-         // Serve static files from the 'frontend' directory
-         const frontendPath = path.join(__dirname, '../frontend');
-         console.log(`Serving static files from: ${frontendPath}`);
-         app.use(express.static(frontendPath));
+         // app.use(express.static(frontendPath));
 
          // Explicitly serve index.html for the root route
-         app.get('/', (req, res) => {
-           res.sendFile(path.join(frontendPath, 'index.html'));
-         });
+         // app.get('/', (req, res) => {
+         //   res.sendFile(path.join(frontendPath, 'index.html'));
+         // });
          
          const PORT = process.env.PORT || 3000;
          

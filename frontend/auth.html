@@ -4,18 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmFokus - Login/Register</title>
-    <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/dark-lightmode.css">
   </head>
   <body>
     <header>
-      <div class="header-left">
+     
         <a href="index.html" class="logo-link">
           <img src="./img/Film-Fokus.png" alt="Logotyp FilmFokus" />
         </a>
-      </div>
 
+      
+        <label for="menu-toggle" class="menu-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+   
 
+      <nav id="navbar">
+        <a href="index.html">Hem</a>
+        <a href="filmer.html">Filmer</a>
+        <a href="premiärer.html">Premiärer</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+          <button class="dropbtn">Mer <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="om-oss.html">Om oss</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+        </div>
+        <button id="darkToggle">☀️ Switch to Dark</button>
+        <div class="dropdown auth-dropdown">
+          <button class="dropbtn">Account <i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content" id="auth-dropdown-content">
+            
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>

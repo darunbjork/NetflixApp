@@ -1,51 +1,6 @@
-nav #darkToggle {
-    color: #ebf2ed;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 5px 0;
-    transition: color 0.3s;
-    border: none;
-    background: none;
-}
-
-#darkToggle:hover {
-    color: #101111; /* Lighter teal accent on hover */
-}
-
-#darkToggle {
-    background: #408e17; /* Deep teal header */
-    color: #ffffff;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    margin: 0 15px;
-}
-
-
-/* Dark mode adjustments for dropdowns */
-body.dark-mode .dropdown-content {
-    background-color: #1f2937; /* Darker background for dark mode dropdown */
-}
-
-body.dark-mode .dropdown-content a {
-    color: #d1d5db; /* Lighter text in dark mode */
-}
-
-body.dark-mode .dropdown-content a:hover {
-    background-color: #374151; /* Darker hover in dark mode */
-    color: #ffffff;
-}
-
 /* --- Dark Mode --- */
-
-
 body.dark-mode {
-    background: linear-gradient(100deg, #850e0e, #250404)
-   
-}
-
-body.dark-mode header {
-    background: linear-gradient(100deg, #250404, #850e0e);
-    box-shadow: 0 2px 5px rgba(251, 247, 247, 0.5);
+    background-color: #03045E;
 }
 
 body.dark-mode h2 {
@@ -90,13 +45,13 @@ body.dark-mode .filter-btn.active {
 
 body.dark-mode .details-button,
 body.dark-mode .back-btn {
-    background-color: #2563eb;
+    background-color: #006989;
     color: #ffffff;
 }
 
 body.dark-mode .details-button:hover,
 body.dark-mode .back-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #004f6b;
 }
 
 body.dark-mode #movies-table th,
@@ -113,4 +68,13 @@ body.dark-mode .form-group textarea {
     background-color: #374151;
     border-color: #4b5563;
     color: #d1d5db;
+}
+
+body.dark-mode .favorite-button {
+    background-color: #FD105E; /* New color for favorite button in dark mode */
+    color: #ffffff;
+}
+
+body.dark-mode .favorite-button:hover {
+    background-color: #d0004a; /* Darker shade for hover in dark mode */
 }

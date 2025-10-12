@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const protectedRoutes = [
         'index.html',
         'movie-detalis.html',
-        'profile.html'
+        'profile.html',
+        'filmer.html',
+        'premiärer.html'
     ];
 
     const currentPage = window.location.pathname.split('/').pop();
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             if (!response.ok) {
                 // Not authenticated, redirect to login
-                window.location.href = 'auth.html';
+                window.location.href = 'login.html';
             }
             // If authenticated, proceed to load the page
         } catch (error) {

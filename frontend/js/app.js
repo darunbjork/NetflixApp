@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const logoutResponse = await fetch('/api/auth/logout', { method: 'GET' });
                 if (logoutResponse.ok) {
-                    window.location.href = 'auth.html';
+                    window.location.href = 'login.html';
                 } else {
                     alert('Logout failed. Please try again.');
                 }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         profileLink.style.display = 'none'; // Hide Profile link
 
         // Add Login/Register link to the dropdown
-        authDropdownContent.innerHTML += '<a href="auth.html">Login/Register</a>';
+        authDropdownContent.innerHTML += '<a href="login.html">Login/Register</a>';
       }
     } catch (error) {
       console.error('Error checking authentication status:', error);

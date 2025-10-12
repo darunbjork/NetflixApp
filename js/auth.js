@@ -1,7 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Use relative path for API calls, as the backend serves the frontend
-    const BASE_API_URL = ''; // This will be relative to the current host
+import { API_ROOT_URL } from './api.js';
 
+document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const loginStatus = document.getElementById('loginStatus');
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('registerPassword').value;
 
             try {
-                const response = await fetch(`${BASE_API_URL}/api/auth/register`, {
+                const response = await fetch(`${API_ROOT_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('loginPassword').value;
 
             try {
-                const response = await fetch(`${BASE_API_URL}/api/auth/login`, {
+                const response = await fetch(`${API_ROOT_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

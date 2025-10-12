@@ -1,3 +1,5 @@
+import { API_ROOT_URL } from './api.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
   const themeToggle = document.getElementById("darkToggle");
   const body = document.body;
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     authDropdownContent.innerHTML = '';
 
     try {
-      const response = await fetch('/api/auth/me', {
+      const response = await fetch(`${API_ROOT_URL}/api/auth/me`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         logoutLink.addEventListener('click', async (e) => {
             e.preventDefault();
             try {
-                const logoutResponse = await fetch('/api/auth/logout', { method: 'GET' });
+                const logoutResponse = await fetch(`${API_ROOT_URL}/api/auth/logout`, { method: 'GET' });
                 if (logoutResponse.ok) {
                     window.location.href = 'login.html';
                 } else {

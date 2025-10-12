@@ -1,6 +1,4 @@
-// The base URL of your backend API.
-// By using a relative path, the browser will request from the same host and port.
-const API_BASE_URL = 'https://netflix-backend-api-btqm.onrender.com/api/movies';
+const API_ROOT_URL = 'https://netflix-backend-api-btqm.onrender.com';
 
 /**
  * Fetches movies from the API.
@@ -9,7 +7,7 @@ const API_BASE_URL = 'https://netflix-backend-api-btqm.onrender.com/api/movies';
  */
 export async function getMovies(query = '') {
     // Correctly construct the full URL
-    const url = `${API_BASE_URL}${query}`;
+    const url = `${API_ROOT_URL}/api/movies${query}`;
 
     try {
         const response = await fetch(url); // GET is the default method, headers not needed for a simple GET
@@ -47,7 +45,7 @@ export async function getMovies(query = '') {
  * @returns {Promise<Object>} - A promise that resolves to a single movie object.
  */
 export async function getMovieById(id) {
-    const url = `${API_BASE_URL}/${id}`;
+    const url = `${API_ROOT_URL}/api/movies/${id}`;
 
     try {
         const response = await fetch(url);
@@ -78,7 +76,7 @@ export async function getMovieById(id) {
  */
 export async function createMovie(movieData) {
     try {
-        const response = await fetch(API_BASE_URL, {
+        const response = await fetch(`${API_ROOT_URL}/api/movies`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -105,7 +103,7 @@ export async function createMovie(movieData) {
  * @returns {Promise<Object>} - A promise that resolves to the updated movie object.
  */
 export async function updateMovie(id, movieData) {
-    const url = `${API_BASE_URL}/${id}`;
+    const url = `${API_ROOT_URL}/api/movies/${id}`;
 
     try {
         const response = await fetch(url, {
@@ -134,7 +132,7 @@ export async function updateMovie(id, movieData) {
  * @returns {Promise<void>} - A promise that resolves when the movie is deleted.
  */
 export async function deleteMovie(id) {
-    const url = `${API_BASE_URL}/${id}`;
+    const url = `${API_ROOT_URL}/api/movies/${id}`;
 
     try {
         const response = await fetch(url, {
@@ -160,7 +158,7 @@ export async function deleteMovie(id) {
  */
 export async function addFavoriteMovie(movieId) {
     try {
-        const response = await fetch(`/api/auth/favorites/${movieId}`, {
+        const response = await fetch(`${API_ROOT_URL}/api/auth/favorites/${movieId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -186,7 +184,7 @@ export async function addFavoriteMovie(movieId) {
  */
 export async function removeFavoriteMovie(movieId) {
     try {
-        const response = await fetch(`/api/auth/favorites/${movieId}`, {
+        const response = await fetch(`${API_ROOT_URL}/api/auth/favorites/${movieId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -204,4 +202,3 @@ export async function removeFavoriteMovie(movieId) {
         throw error;
     }
 }
-
